@@ -21,7 +21,7 @@ module.exports = () => {
     },
     // Plugins for each webpack bundle.
     plugins: [
-      // this plugin will generate an HTML5 file that includes all webpack bundles in the body using script tags
+      // this plugin will generate an HTML file that includes all webpack bundles in the body using script tags
       new HtmlWebpackPlugin({
         template: "./src/index.html",
         title: "PWA Text Editor",
