@@ -23,12 +23,14 @@ module.exports = () => {
     plugins: [
       // this plugin will generate an HTML file that includes all webpack bundles in the body using script tags
       new HtmlWebpackPlugin({
-        template: "./src/index.html",
+        template: "./index.html",
         title: "PWA Text Editor",
       }),
 
       // this plugin will generate a manifest.json file for the PWA
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: "JATE - PWA Text Editor",
         short_name: "JATE",
         description: "Just another text editor that works offline.",
