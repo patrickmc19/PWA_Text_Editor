@@ -10,9 +10,6 @@ module.exports = () => {
     entry: {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
-      database: "./src/js/database.js",
-      editor: "./src/js/editor.js",
-      header: "./src/js/header.js",
     },
     // Output for each webpack bundle.
     output: {
@@ -29,15 +26,15 @@ module.exports = () => {
 
       // this plugin will generate a manifest.json file for the PWA
       new WebpackPwaManifest({
-        fingerprints: false,
-        inject: true,
         name: "JATE - PWA Text Editor",
         short_name: "JATE",
         description: "Just another text editor that works offline.",
-        background_color: "#ffffff",
-        theme_color: "#ffffff",
+        background_color: "#00421A",
+        theme_color: "#00421A",
         start_url: "/",
         publicPath: "/",
+        fingerprints: false,
+        inject: true,
         icons: [
           {
             src: path.resolve("src/images/logo.png"),

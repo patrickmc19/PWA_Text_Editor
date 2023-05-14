@@ -35,26 +35,9 @@ registerRoute(
             new CacheableResponsePlugin({
                 statuses: [0, 200],
             }),
+            new ExpirationPlugin({
+                maxAgeSeconds: 30 * 24 * 60 * 60,
+            }),
         ],
     })
 );
-
-// offlineFallback({
-//     pageFallback: '/index.html',
-//     imageFallback: '/images/logo.png',
-//     pageFallbackPath: '/index.html',
-//     imageFallbackPath: '/images/logo.png',
-//     cacheImages: true,
-//     cacheFallbackPath: '/index.html',
-//     cacheName: 'offline-fallback',
-//     fallbackURL: '/index.html',
-//     cacheableResponse: { statuses: [0, 200] },
-//     broadcastUpdate: {
-//         channelName: 'offline-fallback',
-//     },
-//     plugins: [
-//         new CacheableResponsePlugin({
-//             statuses: [0, 200],
-//         }),
-//     ],
-// });

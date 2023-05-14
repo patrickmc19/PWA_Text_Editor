@@ -37,6 +37,6 @@
   "display": "standalone",
   "start_url": "/",
   "description": "Just another text editor that works offline.",
-  "background_color": "#ffffff",
-  "theme_color": "#ffffff"
+  "background_color": "#00421A",
+  "theme_color": "#00421A"
 }
