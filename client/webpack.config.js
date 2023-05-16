@@ -10,6 +10,9 @@ module.exports = () => {
     entry: {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
+      database: "./src/js/database.js",
+      editor: "./src/js/editor.js",
+      header: "./src/js/header.js",
     },
     // Output for each webpack bundle.
     output: {
@@ -23,9 +26,17 @@ module.exports = () => {
         template: "./index.html",
         title: "PWA Text Editor",
       }),
+      
+      // this plugin will generate a service worker file
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
+      }),
 
       // this plugin will generate a manifest.json file for the PWA
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: "JATE - PWA Text Editor",
         short_name: "JATE",
         description: "Just another text editor that works offline.",
@@ -33,23 +44,15 @@ module.exports = () => {
         theme_color: "#00421A",
         start_url: "/",
         publicPath: "/",
-        fingerprints: false,
-        inject: true,
         icons: [
           {
             src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512], // allow multiple sizes
             destination: path.join("assets", "icons"),
-          },
-        ],
+          },  
+        ],  
       }),
-
-      // this plugin will generate a service worker file
-      new InjectManifest({
-        swSrc: "./src-sw.js",
-        swDest: "src-sw.js",
-      }),
-    ],
+    ],  
 
     module: {
       // load css files
