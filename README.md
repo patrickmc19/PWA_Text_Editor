@@ -50,6 +50,8 @@ To install the editor as a PWA, open the editor in a browser and click the insta
 
 To use the editor, open the editor in a browser and enter text in the textarea element. The editor can be used offline once it is installed as a PWA. Local storage allows the text entered to persist upon opening, refreshing, and closing the app.
 
+Make sure to clear your cache and delete the dist folder before deploying.
+
 ## Deployed Application
 
 The editor is deployed on Heroku at https://pwa-text-editor19.herokuapp.com/.
